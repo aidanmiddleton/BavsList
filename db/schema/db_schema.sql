@@ -19,7 +19,7 @@ create table listings (
 	description VARCHAR(255) NOT NULL,
 	image VARCHAR(255) NOT NULL,
 	date_created DATE NOT NULL,
-	date_sold DATE,
+	is_sold BOOLEAN NOT NULL DEFAULT FALSE,
 	price INTEGER NOT NULL DEFAULT 0,
 	behaviour VARCHAR(255) NOT NULL,
 	category VARCHAR(255) NOT NULL
