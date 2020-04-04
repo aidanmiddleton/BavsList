@@ -1,6 +1,6 @@
 INSERT INTO users (name, location)
 VALUES
-('Joe Shmoe', 'Vancouver'),
+('Joe Exotic', 'Oklahoma'),
 ('Leonidas Lichtfoth', 'Richmond'),
 ('Philly Fulstow', 'Burnaby'),
 ('Eamon Moreby', 'Surrey'),
@@ -13,7 +13,7 @@ VALUES
 ('Noelyn Jaskowicz', 'Richmond');
 
 
-insert into listings (user_id, title, description, image, date_created, price, behaviour, category)
+INSERT INTO listings (user_id, title, description, image, date_created, price, behaviour, category)
 VALUES
 (6, 'Jake', 'Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.', 'http://dummyimage.com/198x241.bmp/dddddd/000000', '2019-04-24 12:41:49', '8000', 'lazy', 'cheetah'),
 
@@ -25,13 +25,13 @@ VALUES
 
 (5, 'Pepper', 'Looking for a feline friend to talk to? Pepper is just the leopard for you! Pepper is a bit of a Chatty Cathy, she enjoys deep conversations about life and it’s little mysteries. That’s not the only thing she enjoys, though! She also loves attention, cuddles, and a warm lap to lay on.', 'http://dummyimage.com/178x102.png/cc0000/ffffff', '2019-10-23 00:13:52', '9000', 'active', 'leopard'),
 
-(6, 'Milo', 'Milo is a very shy 9 month old female cougar with a medium black and white coat. Milo would perhaps do well with a socialized cougar companion, who can teach her that humans are safe and kind. We feel given time and patience she may improve in a home that could provide this pretty girl with a calm and relaxed environment.', 'http://dummyimage.com/184x203.jpg/ff4444/ffffff', '2019-09-29 18:35:46', '7000', 'shy', 'cougar'),
+(7, 'Milo', 'Milo is a very shy 9 month old female cougar with a medium black and white coat. Milo would perhaps do well with a socialized cougar companion, who can teach her that humans are safe and kind. We feel given time and patience she may improve in a home that could provide this pretty girl with a calm and relaxed environment.', 'http://dummyimage.com/184x203.jpg/ff4444/ffffff', '2019-09-29 18:35:46', '7000', 'shy', 'cougar'),
 
 (1, 'Daisy', 'Daisy loves being inside with her family, staying comfortable and safe. Daisy is used to being the only animal and would do best in a home with no other animals, she likes to be the queen of her castle. She can be startled by loud noises and may be a bit shy at first until comfortable.', 'http://dummyimage.com/107x155.png/ff4444/ffffff', '2019-07-13 14:58:04', '12000', 'antisocial', 'cheetah'),
 
 (5, 'Cleo', 'Cleo would love a quiet home with her own place to sleep the days away. She loves raw food and prefers it to be served multiple times daily so it is always fresh! Don’t be deceived by her pouty look, she’s actually a very gentle, affectionate and sweet lady with a crackly roar and one white whisker.', 'http://dummyimage.com/199x108.bmp/5fa2dd/ffffff', '2019-09-04 13:09:35', '7500', 'gentle', 'tiger'),
 
-(6, 'Angel', 'Angel frequently hunts for her favourite toys, and brings them to you as gifts. A funny thing to note: Angel also likes to look out from windows. She is best suited to a calm, quiet home', 'http://dummyimage.com/143x106.png/cc0000/ffffff', '2019-09-23 11:28:04', '11000', 'silly', 'lion'),
+(8, 'Angel', 'Angel frequently hunts for her favourite toys, and brings them to you as gifts. A funny thing to note: Angel also likes to look out from windows. She is best suited to a calm, quiet home', 'http://dummyimage.com/143x106.png/cc0000/ffffff', '2019-09-23 11:28:04', '11000', 'silly', 'lion'),
 
 (1, 'Dusty', 'Dusty is a strikingly handsome male jaguar. He is quite shy and would do best in a home where he was the only jaguar with no small children.', 'http://dummyimage.com/208x147.bmp/dddddd/000000', '2019-08-19 03:23:49', '9000' 'grumpy', 'jaguar'),
 
@@ -41,7 +41,7 @@ VALUES
 
 (4, 'Coco', 'Misty and Coco haved lived together for 4 years. We would love to place these ladies together if we can find that very special home for them. Coco is more reserved until you get to know her. She may be more shy but she is also more playful', 'http://dummyimage.com/183x220.jpg/cc0000/ffffff', '2020-04-01 17:37:41', '4000', 'playful', 'cheetah'),
 
-(3, 'Lucy', 'Lucy is looking for a new home because she and her other tiger friend arent getting along. She is a pretty lady that would suit to be an only tiger. She is healthy and quite affectionate on her own but can be shy.', 'http://dummyimage.com/165x186.jpg/ff4444/ffffff', '2019-12-25 04:19:51', '7500', 'shy', 'tiger'),
+(9, 'Lucy', 'Lucy is looking for a new home because she and her other tiger friend arent getting along. She is a pretty lady that would suit to be an only tiger. She is healthy and quite affectionate on her own but can be shy.', 'http://dummyimage.com/165x186.jpg/ff4444/ffffff', '2019-12-25 04:19:51', '7500', 'shy', 'tiger'),
 
 (4, 'Simba', 'Simba is a rowdy, independent little cub who likes to romp and play. Simba did not like grubs when he was younger but has since come to like them. His favourite saying is Hakuna Matata - whatever that means. Simba will one day become the King of the Pride Lands and ruler of Pride Rock.', 'http://dummyimage.com/212x157.png/dddddd/000000', '2019-09-05 19:22:39', '16000', 'independant', 'lion'),
 
@@ -49,7 +49,7 @@ VALUES
 
 (6, 'Monty', 'Monty was brought into us after he was hanging around in someones backyard for about three weeks. He can have a bit of feisty side to him so we recommend a home without children and one where he would be an only pet. Monty has warmed up to us the more time he spends with our staff and he will warm up to a loving home as well.', 'http://dummyimage.com/221x149.bmp/5fa2dd/ffffff', '2019-08-15 09:52:05', '6000', 'feisty', 'leopard'),
 
-(1, 'Whiskers', 'This large adult tiger is female.  She has a short white coat with many cinnamon chinchilla spots.  She has a short, narrow face and is quite muscular.  She is especially fond of chicken, is very lazy, and is very shy.', 'http://dummyimage.com/155x183.png/5fa2dd/ffffff', '2019-04-13 20:51:44', '3500', 'curious', 'tiger'),
+(11, 'Whiskers', 'This large adult tiger is female.  She has a short white coat with many cinnamon chinchilla spots.  She has a short, narrow face and is quite muscular.  She is especially fond of chicken, is very lazy, and is very shy.', 'http://dummyimage.com/155x183.png/5fa2dd/ffffff', '2019-04-13 20:51:44', '3500', 'curious', 'tiger'),
 
 (2, 'Buddy', 'This average-sized adult lion is male.  He has a short white coat with a fawn tabby hood and tail with a spot on his back.  He has a medium-length, average-width face and is fairly muscular.  He is a picky eater, is very playful, and is cautious around strangers.', 'http://dummyimage.com/107x178.bmp/5fa2dd/ffffff', '2019-12-07 04:10:08', '5500', 'cautious', 'lion'),
 
