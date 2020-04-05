@@ -1,0 +1,20 @@
+body {
+  background-color: #fcf8e8;
+  font-size: 1em;
+}
+
+.nav-wrapper {
+  width: 100%;
+  color: #ecdfc8;
+  background-color: #df7861;
+}
+
+.card-panel.hoverable {
+  padding: 0em;
+  background-color: #ecdfc8;
+}
+
+div.card-content {
+  padding: 0em;
+  background-color: #ecdfc8;
+}
