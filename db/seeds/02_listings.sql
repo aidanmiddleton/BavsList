@@ -19,7 +19,7 @@ VALUES
 
 (8, 'Angel', 'Angel frequently hunts for her favourite toys, and brings them to you as gifts. A funny thing to note: Angel also likes to look out from windows. She is best suited to a calm, quiet home', 'http://live.staticflickr.com/5254/5454505643_b399953e2a_b.jpg', '2019-09-23 11:28:04', '11000', 'silly', 'lion'),
 
-(1, 'Dusty', 'Dusty is a strikingly handsome male jaguar. He is quite shy and would do best in a home where he was the only jaguar with no small children.', 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jaguar_%28Panthera_onca_palustris%29_male_Three_Brothers_River_2.jpg/800px-Jaguar_%28Panthera_onca_palustris%29_male_Three_Brothers_River_2.jpg', '2019-08-19 03:23:49', '9000' 'grumpy', 'jaguar'),
+(1, 'Dusty', 'Dusty is a strikingly handsome male jaguar. He is quite shy and would do best in a home where he was the only jaguar with no small children.', 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jaguar_%28Panthera_onca_palustris%29_male_Three_Brothers_River_2.jpg', '2019-08-19 03:23:49', '9000', 'grumpy', 'jaguar'),
 
 (2, 'Oscar', 'Oscar likes to snooze with you in the morning, and get some belly rubs while hes there. He doesnt mind getting picked up occasionally, but hes not a hugger in general. Hes quite affectionate though, and just shows it in different ways.', 'http://live.staticflickr.com/8166/7233839982_92768e39ab_b.jpg', '2019-05-09 00:44:16', '13000', 'territorial', 'leopard'),
 

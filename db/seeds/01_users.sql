@@ -1,13 +1,13 @@
-INSERT INTO users (name, location)
+INSERT INTO users (name, email, location)
 VALUES
-('Joe Exotic', 'Oklahoma'),
-('Leonidas Lichtfoth', 'Richmond'),
-('Philly Fulstow', 'Burnaby'),
-('Eamon Moreby', 'Surrey'),
-('Rochelle Douris', 'Langley'),
-('Aurelea Enga', 'Abbotsford'),
-('Dehlia Bellie', 'Vancouver'),
-('Phedra Hilldrop', 'Vancouver'),
-('Lianne Bulle', 'Surrey'),
-('Kaila Napoleone', 'Burnaby'),
-('Noelyn Jaskowicz', 'Richmond');
+('Joe Exotic', 'jexotic@tigerking.org', 'Oklahoma'),
+('Leonidas Lichtfoth', 'jscemp1@angelfire.com', 'Richmond'),
+('Philly Fulstow', 'enollet4@nature.com', 'Burnaby'),
+('Eamon Moreby', 'kgrestie7@google.cn', 'Surrey'),
+('Rochelle Douris', 'gdillinger0@slashdot.org', 'Langley'),
+('Aurelea Enga', 'rtodhuntera@blogger.com', 'Abbotsford'),
+('Dehlia Bellie', 'bgiacomuzzi9@1und1.de', 'Vancouver'),
+('Phedra Hilldrop', 'etanti8@amazon.co.jp', 'Vancouver'),
+('Lianne Bulle', 'jrickson6@webeden.co.uk', 'Surrey'),
+('Kaila Napoleone', 'ctessington5@businessinsider.com', 'Burnaby'),
+('Noelyn Jaskowicz', 'xwhilder3@dropbox.com', 'Richmond');
