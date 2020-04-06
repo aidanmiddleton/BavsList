@@ -3,9 +3,12 @@ $(document).ready(function(){
 
   $('.modal').modal();
 
+
+
+
   //createCardElement will dynamically generate listing cards, and their modals from the db
 
-  const createCardElement = function() {
+    const createCardElement = function(listing) {
     //listing unit is the combination of the card and the modal description
 
     //Card materialize setup
@@ -15,33 +18,35 @@ $(document).ready(function(){
     const $cardPanel = $('<div>').addClass('card-panel hoverable');
     const $cardDiv = $('<div>').addClass('card');
     const $imgDiv = $('<div>').addClass('card-image waves-effect waves-block waves-light');
-    const $img = $('<img>').addClass('activator').attr('src', "http://upload.wikimedia.org/wikipedia/commons/b/bc/Koushki_2.jpg");
+    const $img = $('<img>').addClass('activator').attr('src', listing.image);
 
     //front card content
     const $contentDiv = $('<div>').addClass('card-content');
-    const $cardSpan = $('<span>').addClass('card-title activator grey-text text-darken-4').text('Jake');
+    const $cardSpan = $('<span>').addClass('card-title activator grey-text text-darken-4').text(listing.title);
     const $moreIcon = $('<i>').addClass('material-icons right').text('more_vert');
-    const $descriptionTrigger = $('<a>').addClass('modal-trigger').attr('href', '#modal2').text('Description');
+    const $descriptionTrigger = $('<a>').addClass('modal-trigger').attr('href', `#modal${listing.id}`).text('Description');
 
     //card reveal content
     const $revealDiv = $('<div>').addClass('card-reveal');
-    const $revealSpan = $('<span>').addClass('card-title grey-text text-darken-4').text('Jake');
+    const $revealSpan = $('<span>').addClass('card-title grey-text text-darken-4').text(listing.title);
     const $closeIcon = $('<i>').addClass('material-icons right').text('close');
 
-    const $species = $('<p>').text('Species: Cheetah');
-    const $price = $('<p>').text('Price: 8000');
-    const $Temperment = $('<p>').text('Temperment: Lazy');
-    const $Seller = $('<p>').text('Seller: Aurelea Enga');
+    const $species = $('<p>').text(`Species: ${listing.category}`);
+    const $price = $('<p>').text(`Price: ${listing.price}`);
+    const $Temperment = $('<p>').text(`Temperment: ${listing.behaviour}`);
+    const $Seller = $('<p>').text(`Seller: ${listing.name}`);
     const $emailButton = $('<a>').addClass('waves-effect waves-light btn').text('Email seller');
 
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
-    const $modalDiv = $('<div>').addClass('modal').attr('id', 'modal2');
+    const $modalDiv = $('<div>').addClass('modal').attr('id', `modal${listing.id}`);
     const $modalContentDiv = $('<div>').addClass('modal-content');
     const $modalTitle = $('<h3>').text('Description');
-    const $description = $('<p>').text('Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.');
+    const $description = $('<p>').text(listing.description);
     const $modalFooter = $('<div>').addClass('modal-footer');
     const $footerCLose = $('<a>').addClass('modal-close waves-effect waves-green btn-flat').attr('href', '#!');
+
+    //appends card and modal into single cohesive unit
 
     $imgDiv.append($img);
     $cardSpan.append($moreIcon)
@@ -63,13 +68,23 @@ $(document).ready(function(){
 
   }
 
-  const renderCardElements = function() {
-    let $currentListing = createCardElement();
-    console.log($currentListing);
-    $('.listing-container').append($currentListing);
+  const renderCardElements = function(listings) {
+    for (let listing of listings) {
+      let $currentListing = createCardElement(listing);
+      // console.log($currentListing);
+      $('.listing-container').append($currentListing);
+    }
   }
 
-  renderCardElements();
+  const loadListings = function() {
+    $('.listing-container').empty();
+    $.get('/listings', function(result) {
+      console.log(result)
+      renderCardElements(result.listingData);
+    })
+  };
+
+  loadListings()
 
 });
 
