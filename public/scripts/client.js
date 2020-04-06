@@ -5,15 +5,16 @@ $(document).ready(function(){
 
   //createCardElement will dynamically generate listing cards, and their modals from the db
 
-  const createCardElement = function(listing) {
+  const createCardElement = function() {
     //listing unit is the combination of the card and the modal description
 
     //Card materialize setup
     const $listingUnit = $('<div>').addClass('listing-unit');
+    const $row = $('<div>').addClass('row')
     const $card = $('<div>').addClass('col m4');
     const $cardPanel = $('<div>').addClass('card-panel hoverable');
     const $cardDiv = $('<div>').addClass('card');
-    const $imgDiv = $('<div>').addClass('ard-image waves-effect waves-block waves-light');
+    const $imgDiv = $('<div>').addClass('card-image waves-effect waves-block waves-light');
     const $img = $('<img>').addClass('activator').attr('src', "http://upload.wikimedia.org/wikipedia/commons/b/bc/Koushki_2.jpg");
 
     //front card content
@@ -35,11 +36,40 @@ $(document).ready(function(){
 
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
-    const modalDiv = $('<div>').addClass('modal').attr('id', 'modal2');
+    const $modalDiv = $('<div>').addClass('modal').attr('id', 'modal2');
+    const $modalContentDiv = $('<div>').addClass('modal-content');
+    const $modalTitle = $('<h3>').text('Description');
+    const $description = $('<p>').text('Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.');
+    const $modalFooter = $('<div>').addClass('modal-footer');
+    const $footerCLose = $('<a>').addClass('modal-close waves-effect waves-green btn-flat').attr('href', '#!');
+
+    $imgDiv.append($img);
+    $cardSpan.append($moreIcon)
+    $contentDiv.append($cardSpan, $descriptionTrigger);
+    $revealSpan.append($closeIcon);
+    $revealDiv.append($revealSpan, $species, $price, $Temperment, $Seller, $emailButton);
+    $modalFooter.append($footerCLose);
+    $modalContentDiv.append($modalTitle, $description);
+    $modalDiv.append($modalContentDiv, $modalFooter);
+    $modalContainerDiv.append($modalDiv);
+    $cardDiv.append($imgDiv, $contentDiv, $revealDiv);
+    $cardPanel.append($cardDiv);
+    $card.append($cardPanel);
+    $row.append($card);
+    $listingUnit.append($row, $modalContainerDiv);
+
+    return $listingUnit;
+
 
   }
 
+  const renderCardElements = function() {
+    let $currentListing = createCardElement();
+    console.log($currentListing);
+    $('.listing-container').append($currentListing);
+  }
 
+  renderCardElements();
 
 });
 
@@ -49,28 +79,28 @@ $(document).ready(function(){
 <div class="col m4">
   <div class="card-panel hoverable">
     <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator"
-          src="http://upload.wikimedia.org/wikipedia/commons/b/bc/Koushki_2.jpg" />
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">
-          Jake
-          <iclass="material-icons right">more_vert</i>
-        </span>
-        <a class='modal-trigger' href="#modal2">Description</a>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">
-          Jake
-          <i class="material-icons right">close</i>
-        </span>
-        <p>Species: Cheetah</p>
-        <p>Price: 8000</p>
-        <p>Temperment: Lazy</p>
-        <p>Seller: Aurelea Enga</p>
-        <a class="waves-effect waves-light btn">Email seller</a>
-      </div>
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator"
+            src="http://upload.wikimedia.org/wikipedia/commons/b/bc/Koushki_2.jpg" />
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+            Jake
+            <iclass="material-icons right">more_vert</i>
+          </span>
+          <a class='modal-trigger' href="#modal2">Description</a>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">
+            Jake
+            <i class="material-icons right">close</i>
+          </span>
+          <p>Species: Cheetah</p>
+          <p>Price: 8000</p>
+          <p>Temperment: Lazy</p>
+          <p>Seller: Aurelea Enga</p>
+          <a class="waves-effect waves-light btn">Email seller</a>
+        </div>
     </div>
   </div>
 </div>
@@ -81,6 +111,7 @@ $(document).ready(function(){
       <h3>Description</h3>
       <p>'Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.'</p>
     </div>
-  <div class="modal-footer">
+    <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-</div> */}
+    </div>
+  */}
