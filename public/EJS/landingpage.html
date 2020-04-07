@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/landing-page.css">
 
+    <!-- SLider -->
+    <script src="../scripts/script.js"></script>
+
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" rel="stylesheet"> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -25,7 +28,8 @@
     <title>Document</title>
   </head>
   <body>
-    <nav>
+    <div class="navbar-fixed">
+      <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">BavsList</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -39,18 +43,7 @@
           </li>
         </ul>
       </div>
-    </nav>
-
-    <div class="container">
-       <div id="modal1" class="modal">
-         <div class="modal-content">
-           <h3>Search</h3>
-           <h5>Price</h5>
-         </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-       </div>
+      </nav>
     </div>
 
      <!-- New Post popup -->
@@ -117,6 +110,60 @@
         <a href="#!" class="modal-close waves-effect waves-green btn-flat"
           >Submit</a
         >
+        </div>
+      </div>
+
+      <!--Search button Pop-up box-->
+    <div class="container">
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <!--Search area-->
+          <h5> <textarea name="search-box" id="" cols="30" rows="10" placeholder="Search"></textarea></h5>
+          <!--Slider for Price-->
+        <div class="slideContainer">
+          <input type="range" min="1" max="1000" value="1" id="myRange" class="slider">
+          <p>value: <span id="value"></span></p>
+        </div>
+       <!--Category DropDown-->
+          <label>Category</label>
+          <select class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Tiger</option>
+            <option value="2">Cheetah</option>
+            <option value="3">Lion</option>
+            <option value="4">Jaguar</option>
+            <option value="5">Leopard</option>
+            <option value="6">Cougar</option>
+          </select>
+
+        <!--Behavior DropDown-->
+                  <label>Behaviour</label>
+                  <select class="browser-default">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Lazy</option>
+                    <option value="2">Cuddly</option>
+                    <option value="3">Calm</option>
+                    <option value="4">Quiet</option>
+                    <option value="5">Active</option>
+                    <option value="6">Shy</option>
+                    <option value="7">Anti-Social</option>
+                    <option value="8">Gentle</option>
+                    <option value="9">Silly</option>
+                    <option value="10">Grumpy</option>
+                    <option value="11">Territorial</option>
+                    <option value="12">Easygoing</option>
+                    <option value="13">Playful</option>
+                    <option value="14">Independant</option>
+                    <option value="15">Nervous</option>
+                    <option value="16">Feisty</option>
+                  </select>
+                </div>
+
+                <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Agree</a
+          >
+          </div>
         </div>
       </div>
 
