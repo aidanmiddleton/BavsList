@@ -1,3 +1,20 @@
 #search-box {
   background-color: red
 }
+
+#category {
+  display: inherit;
+}
+
+#description {
+  margin-top: 20px;
+  border-bottom: 1px solid gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.new-post-submit {
+  margin-top: 10px;
+
+}
