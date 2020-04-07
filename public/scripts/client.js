@@ -77,7 +77,7 @@ $(document).ready(function(){
   }
 
   const loadListings = function() {
-    $('.listing-container').empty();
+    // $('.listing-container').empty();
     $.get('/listings', function(result) {
       console.log(result)
       renderCardElements(result.listingData);
