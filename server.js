@@ -64,7 +64,7 @@ app.get("/listings", (req, res) => {
     });
 
     app.get("/", (req, res) =>{
-    res.render("landingpage");
+    res.render("card-test");
   })
 
 app.listen(PORT, () => {
