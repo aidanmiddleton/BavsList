@@ -1,9 +1,19 @@
 
 $(document).ready(function(){
 
+<<<<<<< HEAD
   $('.modal').modal();
 
   // const $catg = $('.browser-default').on('change', () => { console.log('test', $(this)) })
+=======
+<<<<<<< HEAD
+  $('.modal').modal();
+
+  // const $catg = $('.browser-default').on('change', () => { console.log('test', $(this)) })
+=======
+
+>>>>>>> 70afe996224c61c55b446a1f25e98f932ad4acc8
+>>>>>>> feature/search
 
 
   //createCardElement will dynamically generate listing cards, and their modals from the db
