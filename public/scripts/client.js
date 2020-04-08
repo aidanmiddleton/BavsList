@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $('.modal').modal();
 
-
+  // const $catg = $('.browser-default').on('change', () => { console.log('test', $(this)) })
 
 
   //createCardElement will dynamically generate listing cards, and their modals from the db

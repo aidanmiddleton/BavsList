@@ -1,5 +1,5 @@
-require("dotenv").config({ path: "../../" }); //make sure query works
-const config = require("../../lib/db");
+require('dotenv').config(); 
+const config = require("../lib/db");
 const pg = require("pg");
 const db = new pg.Client(config);
 

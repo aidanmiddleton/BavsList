@@ -20,7 +20,7 @@ div.card-content {
 }
 
 /*SLIDER*/
-
+/* 
 .slideContainer {
   width: 75%;
   margin-top: 20px;
@@ -40,9 +40,9 @@ div.card-content {
   color: black;
   font-size: 1.5rem;
   position: absolute;
-  /* left: 5%; */
+
   top: 100%;
-}
+} */
 
 .slider {
   -webkit-appearance: none;
@@ -74,22 +74,49 @@ div.card-content {
   border-radius: 50%;
   cursor: pointer;
 }
-/**** Custom styles for noUiSlider ****/
-/* .noUi-connect {
-  background: purple;
-}
-.noUi-horizontal .noUi-handle,
-.noUi-vertical .noUi-handle {
-  background: purple;
-}
-.noUi-target.noUi-horizontal .noUi-tooltip {
-  background-color: purple;
+
+.container {
+  margin-top: 30px;
 } */
 
-/* For the globe and the text inside */
-/* input[type="range"] + .thumb {
-  background-color: blue;
+#input-select,
+#input-number {
+	padding: 7px;
+	margin: 15px 5px 5px;
+	width: 70px;
 }
-input[type="range"] + .thumb.active .value {
-  color: #fff;
-} */
+
+.noUi-horizontal {
+    height: 10px;
+    margin-bottom: 30px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 30px;
+    height: 30px;
+    left: -17px;
+    top: -10px;
+    border-radius: 50%;
+    outline: 0;
+}
+.center {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+/*   background: #423e3e; */
+  overflow: hidden;
+  padding: 10px 10px;
+  margin-top: 50px;
+}
+input {
+  box-shadow: none;
+}
+#input-select, #input-number {
+    padding: 7px;
+    margin: 0 20px;
+    width: 70px;
+    padding: 10px 6px;
+    text-align: center;
+}
+.noUi-horizontal .noUi-handle {
+  background: #ffdc40;
+}
