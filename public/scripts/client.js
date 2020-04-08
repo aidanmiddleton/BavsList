@@ -83,6 +83,10 @@ $(document).ready(function(){
 
   loadListings()
 
+  // const loadFavourites = function() {
+  //   $.get()
+  // }
+
 });
 
 
