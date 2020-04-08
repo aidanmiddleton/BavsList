@@ -17,14 +17,18 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/landing-page.css">
 
+    <!--loading JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <!-- SLider -->
     <script src="../scripts/script.js"></script>
 
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" rel="stylesheet"> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- New Post submission-->
+    <script src="../scripts/new-post.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../scripts/client.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script> -->
+
     <title>Document</title>
   </head>
   <body>
@@ -51,8 +55,7 @@
       <div id="modalNew" class="modal">
         <div class="modal-content">
           <h4>New Post</h4>
-          <script src="../scripts/new_listing.js"></script>
-          <form method="post" id="new-listing-form" class="new-listing-form">
+          <form id="new-listing-form" class="new-listing-form">
 
               <!-- new post title -->
           <div class="new-post-title">
@@ -101,8 +104,8 @@
 
             <!-- new post create button -->
           <div class="new-post-submit">
-                <button>Create</button>
-                <a id="form__cancel" href="#">Cancel</a>
+                <button name="submit" id="new-post-submit">Create</button>
+                <a class="form__cancel" href="#">Cancel</a>
           </div>
           </form>
         </div>
