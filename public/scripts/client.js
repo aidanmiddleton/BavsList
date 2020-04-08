@@ -1,8 +1,6 @@
 
 $(document).ready(function(){
 
-  $('.modal').modal();
-
 
 
 
@@ -81,6 +79,7 @@ $(document).ready(function(){
     $.get('/listings', function(result) {
       console.log(result)
       renderCardElements(result.listingData);
+      $('.modal').modal();
     })
   };
 

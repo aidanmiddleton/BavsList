@@ -18,3 +18,32 @@
   margin-top: 10px;
 
 }
+
+.card {
+  width: 25vw;
+  height:auto
+}
+
+.listing-container {
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  margin-left:10%;
+  margin-right: 10%;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+#navbar {
+  background-color: rgb(223, 158, 39);
+  background-image: url('https://www.pngarts.com/files/1/Zebra-Print-PNG-Photo.png');
+}
+
+@media (min-width: 600px) {
+  .listing-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .listing-container { grid-template-columns: repeat(3, 1fr); }
+}
