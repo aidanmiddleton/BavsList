@@ -1,6 +1,6 @@
 
 const newPost = function(e){
-  // e.preventDefault();
+  e.preventDefault();
 
   let queryValues = [];
 
@@ -13,12 +13,13 @@ const newPost = function(e){
 
   queryValues.push(title, description, price, postUrl, behaviour, category);
 
-  const queryString = `INSERT INTO listings (title, description, price, image, behaviour, category) VALUES ($1, $2, $3, $4, $5, $6);`;
+  const queryString = `INSERT INTO listings (user_id, title, description, price, image, behaviour, category) VALUES (1, $1, $2, $3, $4, $5, $6);`;
 
   console.log(queryString, queryValues);
 
   $.post('/new', { queryString, queryValues }, (err, params) => {
-    console.log(params)
+    console.log(params);
+
   })
 
 }
