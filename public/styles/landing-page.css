@@ -6,6 +6,10 @@ html {
   background-color: red
 }
 
+.logo {
+  max-height: -webkit-fill-available;
+}
+
 #category {
   display: inherit;
 }
