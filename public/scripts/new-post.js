@@ -17,16 +17,20 @@ const newPost = function(){
   console.log(queryString, queryValues);
 
   alert("I'm a ready shortcut");
-  return db.query(queryString, queryValues);
+
+
+  return queryString, queryValues;
 
 }
-// const testPost = function(){
-//   console.log("testPost working??");
 
-// }
+
 $(function(){
-  // console.log("we are on ready");
 
+
+  // $.post('/new', function(result) {
+  //   console.log(result)
+  //   (result.listingData);
+  // })
 
   $( "#new-post-submit" ).on( "click", newPost );
 

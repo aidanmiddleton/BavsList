@@ -46,6 +46,8 @@ app.use("/api/routes/testSearch", getCategory(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+//Main page listings
 app.get("/listings", (req, res) => {
   db.query(`
         SELECT listings.*, users.name
@@ -66,6 +68,25 @@ app.get("/listings", (req, res) => {
     app.get("/", (req, res) =>{
     res.render("card-test");
   })
+
+  // New post query to db
+  app.post("/new", (req, res) => {
+    db.query(queryString, queryValues)
+        .then(data => {
+          console.log(data.rows)
+          const newPostData = data.rows;
+          res.json({ newPostData });
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        });
+      });
+
+      app.get("/", (req, res) =>{
+      res.render("card-test");
+    })
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
