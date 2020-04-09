@@ -8,7 +8,7 @@ db.connect((err) => {
   console.log("connected to server");
 });
 
-const search = process.argv[2];
+const search =
 
 db.query(`SELECT * FROM listings WHERE category LIKE $1`, [
   search,
