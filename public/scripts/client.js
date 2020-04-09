@@ -89,6 +89,22 @@ $(document).ready(function(){
   //   $.get()
   // }
 
+
+
+  const loadSearch = function(searchParam) {
+    $.get('/search', function(result) {
+      console.log(result);
+    })
+
+  }
+
+//   $("#btnGet").click(function () {
+//     var selectedText = $("#ddlFruits").find("option:selected").text();
+//     var selectedValue = $("#ddlFruits").val();
+//     // alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+//     loadSearch(selectedText)
+// });
+
 });
 
 

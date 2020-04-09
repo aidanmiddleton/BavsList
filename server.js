@@ -88,3 +88,20 @@ app.get("/listings", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+app.get("/search", (req, res) =>{
+  const category = '%ige%'
+  db.query(`
+  SELECT * FROM listings WHERE category LIKE $1
+  `[category])
+  .then(data => {
+    console.log(data.rows)
+    const searchData = data.rows;
+    res.json({ searchData });
+  })
+  .catch(err => {
+    res.status(500).json({ error: err.message });
+  })
+
+})
