@@ -1,3 +1,7 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
 #search-box {
   background-color: red
 }
@@ -40,6 +44,13 @@
   background-image: url('https://www.pngarts.com/files/1/Zebra-Print-PNG-Photo.png');
 }
 
+nav ul a.btn {
+  background-color: #ffab12;
+  border-radius: 1em;
+  color: black;
+  border: black solid 2px;
+  font-weight: 700;
+}
 @media (min-width: 600px) {
   .listing-container { grid-template-columns: repeat(2, 1fr); }
 }
