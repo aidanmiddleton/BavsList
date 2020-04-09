@@ -1,5 +1,6 @@
 
-const newPost = function(){
+const newPost = function(e){
+  // e.preventDefault();
 
   let queryValues = [];
 
@@ -12,25 +13,18 @@ const newPost = function(){
 
   queryValues.push(title, description, price, postUrl, behaviour, category);
 
-  const queryString = `INSERT INTO listings (title, description, price, postUrl, behaviour, category) VALUES ($1, $2, $3, $4, $5, $6);`;
+  const queryString = `INSERT INTO listings (title, description, price, image, behaviour, category) VALUES ($1, $2, $3, $4, $5, $6);`;
 
   console.log(queryString, queryValues);
 
-  alert("I'm a ready shortcut");
-
-
-  return queryString, queryValues;
+  $.post('/new', { queryString, queryValues }, (err, params) => {
+    console.log(params)
+  })
 
 }
 
 
 $(function(){
-
-
-  // $.post('/new', function(result) {
-  //   console.log(result)
-  //   (result.listingData);
-  // })
 
   $( "#new-post-submit" ).on( "click", newPost );
 

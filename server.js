@@ -71,22 +71,19 @@ app.get("/listings", (req, res) => {
 
   // New post query to db
   app.post("/new", (req, res) => {
+    const queryString = req.body.queryString;
+    const queryValues = req.body.queryValues;
+
     db.query(queryString, queryValues)
         .then(data => {
-          console.log(data.rows)
+          console.log(data)
           const newPostData = data.rows;
           res.json({ newPostData });
         })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
+        res.redirect('/');
       });
 
-      app.get("/", (req, res) =>{
-      res.render("card-test");
-    })
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
