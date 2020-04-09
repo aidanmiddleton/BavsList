@@ -50,7 +50,7 @@ app.use("/api/routes/testSearch", getCategory(db));
 //Main page listings
 app.get("/listings", (req, res) => {
   db.query(`
-        SELECT listings.*, users.name
+        SELECT listings.*, users.name, users.email
         FROM listings
         JOIN users ON user_id = users.id;`)
       .then(data => {

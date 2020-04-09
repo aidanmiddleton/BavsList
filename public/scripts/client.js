@@ -31,7 +31,9 @@ $(document).ready(function(){
     const $price = $('<p>').text(`Price: ${listing.price}`);
     const $Temperment = $('<p>').text(`Temperment: ${listing.behaviour}`);
     const $Seller = $('<p>').text(`Seller: ${listing.name}`);
-    const $emailButton = $('<a>').addClass('waves-effect waves-light btn').text('Email seller');
+    const body = ('Hi there! I\'m interested in purchasing ' + listing.title + '!');
+    const email = ('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=' + listing.email + '&su=' + listing.title + '&&body=' + body);
+    const $emailButton = $('<a>').addClass('waves-effect waves-light btn').attr('href', email).attr('target', '_blank').text('Email seller');
 
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
