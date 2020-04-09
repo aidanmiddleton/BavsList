@@ -94,7 +94,7 @@ app.get("/search", (req, res) =>{
   const category = '%ige%'
   db.query(`
   SELECT * FROM listings WHERE category LIKE $1
-  `[category])
+  `, [category])
   .then(data => {
     console.log(data.rows)
     const searchData = data.rows;
