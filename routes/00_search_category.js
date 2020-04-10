@@ -1,5 +1,6 @@
 require('dotenv').config(); //make sure query works
 const config = require("../lib/db");
+console.log(config)
 const pg = require("pg");
 const db = new pg.Client(config);
 

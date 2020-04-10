@@ -19,15 +19,25 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/landing-page.css">
 
+<<<<<<< HEAD
     <!-- SLider
     <script src="../scripts/script.js"></script> -->
+=======
+    <!-- SLider -->
+    <!-- <script src="../scripts/script.js"></script> -->
+>>>>>>> feature/search-query
 
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" rel="stylesheet"> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../scripts/client.js"></script>
+<<<<<<< HEAD
     <script src="../scripts/new-post.js"></script>
     <script src="../scripts/delete-post.js"></script>
+=======
+
+
+>>>>>>> feature/search-query
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script> -->
     <title>Document</title>
   </head>
@@ -55,7 +65,12 @@
       <div id="modalNew" class="modal">
         <div class="modal-content">
           <h4>New Post</h4>
+<<<<<<< HEAD
           <form id="new-listing-form" class="new-listing-form">
+=======
+          <!-- <script src="../scripts/new_listing.js"></script> -->
+          <form method="post" id="new-listing-form" class="new-listing-form">
+>>>>>>> feature/search-query
 
               <!-- new post title -->
           <div class="new-post-title">
@@ -112,38 +127,38 @@
       </div>
 
       <!--Search button Pop-up box-->
+      <form action="/search" method="GET">
     <div class="container">
       <div id="modal-search" class="modal">
         <div class="modal-content">
           <!--Search area-->
-          <h5> <textarea name="search-box" id="" cols="30" rows="10" placeholder="Search"></textarea></h5>
+          <!-- <h5> <textarea name="search-box" id="" cols="30" rows="10" placeholder="Search"></textarea></h5> -->
           <!--Slider for Price-->
-        <div class="slideContainer">
-          <input type="range" min="1" max="1000" value="1" id="myRange" class="slider">
-          <p>value: <span id="value"></span></p>
-        </div>
+          <input placeholder= "Min" type="number" name="lowerNum" min="0" max="30000" step="1" id="input-number">
+          <input placeholder="Max" type="number" name="higherNum" min="0" max="50000" step="1" id="input-number">
        <!--Category DropDown-->
           <label>Category</label>
-          <select class="browser-default">
+          <select id= "animal-category" name="category" class="browser-default">
             <option value="" disabled selected>Choose your option</option>
-            <option value="1">Tiger</option>
-            <option value="2">Cheetah</option>
-            <option value="3">Lion</option>
-            <option value="4">Jaguar</option>
-            <option value="5">Leopard</option>
-            <option value="6">Cougar</option>
+            <option value="tiger">Tiger</option>
+            <option value="cheetah">Cheetah</option>
+            <option value="lion">Lion</option>
+            <option value="jaguar">Jaguar</option>
+            <option value="leopard">Leopard</option>
+            <option value="cougar">Cougar</option>
           </select>
 
         <!--Behavior DropDown-->
                   <label>Behaviour</label>
-                  <select class="browser-default">
+                  <select id= "animal-behaviour"
+                  class="browser-default">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Lazy</option>
                     <option value="2">Cuddly</option>
                     <option value="3">Calm</option>
                     <option value="4">Quiet</option>
                     <option value="5">Active</option>
-                    <option value="6">Shy</option>
+                    <option value="shy">Shy</option>
                     <option value="7">Anti-Social</option>
                     <option value="8">Gentle</option>
                     <option value="9">Silly</option>
@@ -158,12 +173,12 @@
                 </div>
 
                 <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-            >Agree</a
-          >
+                  <button id="btn">Done</button>
+              <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat" type="submit" id="Agree-submit" value="Agree">Agree</a> -->
           </div>
         </div>
       </div>
+    </form>
 
 <!--CARD START-->
   <div class='listing-container'>
@@ -216,4 +231,5 @@
       </div>
     </div>
   </body>
+
 </html>
