@@ -55,10 +55,30 @@ a.btn {
   border: black solid 2px;
   font-weight: 700;
 }
+
+ /* Description text color change APR10 */
+a{
+  color: rgb(124, 79, 47);
+}
+
+ /* buton hover color change APR10*/
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: rgb(255, 210, 64);
+}
+ /* Number range change APR10 */
+#input-number{
+  width: 10%;
+  margin-left: 2em;
+}
+
 @media (min-width: 600px) {
   .listing-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
   .listing-container { grid-template-columns: repeat(3, 1fr); }
+    /* Hover effect change APR10 */
+    .row .col.m4 {
+      width: 100%;
+  }
 }
