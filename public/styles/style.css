@@ -19,8 +19,16 @@ div.card-content {
   background-color: #ecdfc8;
 }
 
+.popupbtn {
+  margin: 10px;
+}
+
+#delete-post {
+  background-color: darkred;
+}
+
 /*SLIDER*/
-/* 
+/*
 .slideContainer {
   width: 75%;
   margin-top: 20px;

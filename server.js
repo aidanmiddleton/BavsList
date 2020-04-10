@@ -118,9 +118,8 @@ app.get("/listings", (req, res) => {
           const newPostData = data.rows;
           res.json({ newPostData });
         })
-        res.redirect('/');
-      });
 
+      });
 
 
 app.listen(PORT, () => {

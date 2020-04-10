@@ -33,7 +33,8 @@ $(document).ready(function(){
     const $Seller = $('<p>').text(`Seller: ${listing.name}`);
     const body = ('Hi there! I\'m interested in purchasing ' + listing.title + '!');
     const email = ('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=' + listing.email + '&su=' + listing.title + '&&body=' + body);
-    const $emailButton = $('<a>').addClass('waves-effect waves-light btn').attr('href', email).attr('target', '_blank').text('Email seller');
+    const $emailButton = $('<a>').addClass('popupbtn waves-effect waves-light btn').attr('href', email).attr('target', '_blank').text('Email seller');
+    const $deleteButton = $('<button>').addClass('popupbtn waves-effect waves-light btn').attr('id', 'delete-post').text('Delete listing');
 
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
@@ -50,7 +51,7 @@ $(document).ready(function(){
     $cardSpan.append($moreIcon)
     $contentDiv.append($cardSpan, $descriptionTrigger);
     $revealSpan.append($closeIcon);
-    $revealDiv.append($revealSpan, $species, $price, $Temperment, $Seller, $emailButton);
+    $revealDiv.append($revealSpan, $species, $price, $Temperment, $Seller, $emailButton, $deleteButton);
     $modalFooter.append($footerCLose);
     $modalContentDiv.append($modalTitle, $description);
     $modalDiv.append($modalContentDiv, $modalFooter);
