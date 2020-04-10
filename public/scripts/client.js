@@ -1,12 +1,7 @@
-
 $(document).ready(function(){
-
-
   //createCardElement will dynamically generate listing cards, and their modals from the db
-
     const createCardElement = function(listing) {
     //listing unit is the combination of the card and the modal description
-
     //Card materialize setup
     const $listingUnit = $('<div>').addClass('listing-unit');
     const $row = $('<div>').addClass('row')
@@ -15,24 +10,20 @@ $(document).ready(function(){
     const $cardDiv = $('<div>').addClass('card');
     const $imgDiv = $('<div>').addClass('card-image waves-effect waves-block waves-light');
     const $img = $('<img>').addClass('activator').attr('src', listing.image);
-
     //front card content
     const $contentDiv = $('<div>').addClass('card-content');
     const $cardSpan = $('<span>').addClass('card-title activator grey-text text-darken-4').text(listing.title);
     const $moreIcon = $('<i>').addClass('material-icons right').text('more_vert');
     const $descriptionTrigger = $('<a>').addClass('modal-trigger').attr('href', `#modal${listing.id}`).text('Description');
-
     //card reveal content
     const $revealDiv = $('<div>').addClass('card-reveal');
     const $revealSpan = $('<span>').addClass('card-title grey-text text-darken-4').text(listing.title);
     const $closeIcon = $('<i>').addClass('material-icons right').text('close');
-
     const $species = $('<p>').text(`Species: ${listing.category}`);
     const $price = $('<p>').text(`Price: ${listing.price}`);
     const $Temperment = $('<p>').text(`Temperment: ${listing.behaviour}`);
     const $Seller = $('<p>').text(`Seller: ${listing.name}`);
     const $emailButton = $('<a>').addClass('waves-effect waves-light btn').text('Email seller');
-
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
     const $modalDiv = $('<div>').addClass('modal').attr('id', `modal${listing.id}`);
@@ -41,9 +32,7 @@ $(document).ready(function(){
     const $description = $('<p>').text(listing.description);
     const $modalFooter = $('<div>').addClass('modal-footer');
     const $footerCLose = $('<a>').addClass('modal-close waves-effect waves-green btn-flat').attr('href', '#!');
-
     //appends card and modal into single cohesive unit
-
     $imgDiv.append($img);
     $cardSpan.append($moreIcon)
     $contentDiv.append($cardSpan, $descriptionTrigger);
@@ -58,12 +47,8 @@ $(document).ready(function(){
     $card.append($cardPanel);
     $row.append($card);
     $listingUnit.append($row, $modalContainerDiv);
-
     return $listingUnit;
-
-
   }
-
   const renderCardElements = function(listings) {
     for (let listing of listings) {
       let $currentListing = createCardElement(listing);
@@ -71,7 +56,6 @@ $(document).ready(function(){
       $('.listing-container').append($currentListing);
     }
   }
-
   const loadListings = function() {
     // $('.listing-container').empty();
     $.get('/listings', function(result) {
@@ -82,12 +66,45 @@ $(document).ready(function(){
   };
 
   loadListings()
+  // const loadFavourites = function() {
+  //   $.get()
+  // }
 
-});
+// --------- SEARCH POP UP STUFFS BELOW ------------- //
 
+const loadCategory = function() {
+  $('.listing-container').empty();
+   $.get('/search', function(result) {
+     console.log(result)
+     renderCardElements(result.searchData);
+     $('.modal').modal();
+   })
+ };
 
+ loadCategory()
 
-{/* <div class="row">
+  //---------v2 JAVASCRIPT SEARCH FUNCTION -----------
+  function showCategory() {
+    const selector = document.getElementById('animal-category');
+    const value = selector[selector.listings].value;
+
+    document.getElementById('modal-search').innerHTML = value;
+}
+
+document.getElementById('btn').addEventListener('click', showCategory);
+
+/// --------- PRICE RANGE -----------///
+// function priceRange() {
+//   const selector = document.getElementById('lowerNum');
+//   const value = selector[selector.listings].value;
+//   console.log('this is value: ',value)
+
+//   document.getElementById('modal-search').innerHTML = value;
+// }
+
+// document.getElementById('btn').addEventListener('click', priceRange);
+ });
+/* <div class="row">
 <div class="col m4">
   <div class="card-panel hoverable">
     <div class="card">
@@ -116,14 +133,13 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-
 <div class="card-modal-container">
   <div id="modal2" class="modal">
     <div class="modal-content">
       <h3>Description</h3>
-      <p>'Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.'</p>
+      <p>'Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what's happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.'</p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
-  */}
+  */
