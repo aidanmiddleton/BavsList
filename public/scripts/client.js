@@ -67,9 +67,9 @@ $(document).ready(function(){
   }
 
   const renderCardElements = function(listings) {
+    $('.listing-container').empty();
     for (let listing of listings) {
       let $currentListing = createCardElement(listing);
-      // console.log($currentListing);
       $('.listing-container').append($currentListing);
     }
   }
@@ -85,9 +85,12 @@ $(document).ready(function(){
 
   loadListings()
 
-  // const loadFavourites = function() {
-  //   $.get()
-  // }
+  const getFavourites = function() {
+    $.get('/favourites', function(result) {
+      renderCardElements(result.favData);
+      $('.modal').modal();
+    })
+  }
 
 
 
@@ -98,54 +101,19 @@ $(document).ready(function(){
 
   }
 
-//   $("#btnGet").click(function () {
-//     var selectedText = $("#ddlFruits").find("option:selected").text();
-//     var selectedValue = $("#ddlFruits").val();
-//     // alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-//     loadSearch(selectedText)
-// });
+  console.log('some text', $("#favourites-button"));
+
+  $("#favourites-button").click(function() {
+    // alert( "Handler for .click() called." );
+    getFavourites()
+  });
+
+  $(".logo").click(function() {
+    // alert( "Handler for .click() called." );
+    loadListings()
+  });
+
 
 });
 
 
-
-{/* <div class="row">
-<div class="col m4">
-  <div class="card-panel hoverable">
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator"
-            src="http://upload.wikimedia.org/wikipedia/commons/b/bc/Koushki_2.jpg" />
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">
-            Jake
-            <iclass="material-icons right">more_vert</i>
-          </span>
-          <a class='modal-trigger' href="#modal2">Description</a>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">
-            Jake
-            <i class="material-icons right">close</i>
-          </span>
-          <p>Species: Cheetah</p>
-          <p>Price: 8000</p>
-          <p>Temperment: Lazy</p>
-          <p>Seller: Aurelea Enga</p>
-          <a class="waves-effect waves-light btn">Email seller</a>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="card-modal-container">
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h3>Description</h3>
-      <p>'Jake is hoping to find a home all his own. He would love a home where he can have some space to curl up in a cozy bed or watch what’s happening outside. Jake would prefer to be the solo feline in the home. No other cheetahs please. He is best suited for an adult home or with children over 12.'</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  */}

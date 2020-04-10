@@ -48,7 +48,7 @@ html {
   background-image: url('https://www.pngarts.com/files/1/Zebra-Print-PNG-Photo.png');
 }
 
-nav ul a.btn {
+a.btn {
   background-color: #ffab12;
   border-radius: 1em;
   color: black;

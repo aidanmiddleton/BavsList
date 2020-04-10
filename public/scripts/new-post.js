@@ -1,6 +1,6 @@
 
 const newPost = function(e){
-  e.preventDefault();
+  // e.preventDefault();
 
   let queryValues = [];
 

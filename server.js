@@ -47,6 +47,11 @@ app.use("/api/routes/testSearch", getCategory(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+app.get("/", (req, res) =>{
+  res.render("card-test");
+})
+
 //Main page listings
 app.get("/listings", (req, res) => {
   db.query(`
@@ -65,8 +70,41 @@ app.get("/listings", (req, res) => {
       });
     });
 
-    app.get("/", (req, res) =>{
-    res.render("card-test");
+
+
+  app.get("/favourites", (req, res) => {
+    db.query(`
+    SELECT listings.*, users.name, users.email
+    FROM listings
+    JOIN users ON user_id = users.id
+    JOIN favourites on favourites.listing_id = listings.id
+    WHERE favourites.is_favourite = true;`)
+        .then(data => {
+          console.log(data.rows)
+          const favData = data.rows;
+          res.json({ favData });
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        });
+      });
+
+  app.get("/search", (req, res) =>{
+    const category = '%ige%'
+    db.query(`
+    SELECT * FROM listings WHERE category LIKE $1
+    `, [category])
+    .then(data => {
+      console.log(data.rows)
+      const searchData = data.rows;
+      res.json({ searchData });
+    })
+    .catch(err => {
+      res.status(500).json({ error: err.message });
+    })
+
   })
 
   // New post query to db
@@ -90,18 +128,3 @@ app.listen(PORT, () => {
 });
 
 
-app.get("/search", (req, res) =>{
-  const category = '%ige%'
-  db.query(`
-  SELECT * FROM listings WHERE category LIKE $1
-  `, [category])
-  .then(data => {
-    console.log(data.rows)
-    const searchData = data.rows;
-    res.json({ searchData });
-  })
-  .catch(err => {
-    res.status(500).json({ error: err.message });
-  })
-
-})
