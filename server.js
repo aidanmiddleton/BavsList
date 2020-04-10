@@ -40,14 +40,14 @@ const getCategory = require("./routes/testSearch")
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/routes/testSearch", getCategory(db));
+// app.use("/api/routes/testSearch", getCategory(db));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 // const searchBox = require("./routes/testSearch")
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+// app.use("/api/users", usersRoutes(db));
+// app.use("/api/widgets", widgetsRoutes(db));
 // app.use("/api/routes/testSearch", searchBox(db));
 
 // Note: mount other resources here, using the same pattern above

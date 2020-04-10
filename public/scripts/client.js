@@ -28,7 +28,6 @@ $(document).ready(function(){
     const $emailButton = $('<a>').addClass('popupbtn waves-effect waves-light btn').attr('href', email).attr('target', '_blank').text('Email seller');
     const $deleteButton = $('<button>').addClass('popupbtn waves-effect waves-light btn').attr('id', 'delete-post').text('Delete listing');
 
-    const $emailButton = $('<a>').addClass('waves-effect waves-light btn').text('Email seller');
     //Modal description content
     const $modalContainerDiv = $('<div>').addClass('card-modal-container');
     const $modalDiv = $('<div>').addClass('modal').attr('id', `modal${listing.id}`);
